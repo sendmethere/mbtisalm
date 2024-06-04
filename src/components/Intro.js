@@ -20,7 +20,7 @@ function Intro() {
     if (scenesDone[2] === true) {
       setPass(true);
     }
-  }, [scenesDone]);
+  }, []);
 
   const handleNext = () => {
     if (currentSentence < sentences.length - 1) {
@@ -36,7 +36,7 @@ function Intro() {
   
 return (
   <div className='flex w-full'>
-    <img src={Salming} alt="Salming" />
+    <img className="w-1/3" src={Salming} alt="Salming" />
     <div className='w-full'>
       <div className='lightbox-yellow'>
         {sentences[currentSentence]}

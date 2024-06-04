@@ -19,7 +19,7 @@ function T_talk() {
           <div 
           key={question.no} 
           num={question.no} 
-          className="p-2 px-4 my-2 rounded-2xl text-xs bg-violet-100 hover-zoom"
+          className="p-2 px-4 my-2 rounded-2xl text-md bg-violet-100 text-violet-500  hover-zoom"
           >
             {question.question}
           </div>
