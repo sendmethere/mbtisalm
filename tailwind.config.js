@@ -26,6 +26,7 @@ module.exports = {
       },
       colors: {
         primary : '#4f72f2',
+        primaryLight : '#E3E9FB',
         violet : {
         100: '#f4f2ff',
         200: '#d6d8ef',

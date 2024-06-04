@@ -57,8 +57,11 @@ function App() {
             
             {currentScene.sceneGuideTitle !== '' && (
               <div className='m-box m-4 p-4'>
-              <p className='text-blue-200 text-lg font-bold'>
+              <p className='text-violet-500 text-lg font-bold'>
                 {currentScene.sceneGuideTitle}
+              </p>
+              <p className='text-violet-400 text-sm'>
+                {currentScene.sceneGuideContent}
               </p>
               </div>
             )}

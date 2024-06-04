@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.pointer-events-auto * {
+  pointer-events: auto !important;
+}
+
 @layer utilities {
   .hover-zoom {
     cursor: pointer;

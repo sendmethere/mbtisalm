@@ -1,3 +1,4 @@
+// scene : 2
 import React, {useState, useEffect} from 'react';
 import Salming from '../images/salming.png';
 
@@ -9,14 +10,17 @@ function Intro() {
   const [currentSentence, setCurrentSentence] = useState(0);
 
   useEffect(() => {
-    if (scenesDone[1] === true) {
-      setPass(true);
-    }
     if (currentSentence === sentences.length - 1) {
-      setScenesDone(1);
+      setScenesDone(2);
       setPass(true);
     }
   }, [currentSentence]);
+
+  useEffect(() => {
+    if (scenesDone[2] === true) {
+      setPass(true);
+    }
+  }, [scenesDone]);
 
   const handleNext = () => {
     if (currentSentence < sentences.length - 1) {
