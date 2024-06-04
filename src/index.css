@@ -1,13 +1,44 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .hover-zoom {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  .hover-zoom:hover {
+    transform: scale(1.05);
+  }
+  .hover-light {
+    cursor: pointer;
+    transition: filter 0.3s ease;
+  }
+  .hover-light:hover {
+    filter: brightness(1.05);
+  }
+  .deactivated {
+    filter: grayscale(1);
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.m-box {
+  border-radius: 16px;
+  background: #FFF;
+  box-shadow: 0px 6px 1px 2px #E6E5ED;
+}
+
+.m-button-gradient {
+  border-radius: 24px;
+  box-shadow: 0px -4px 8px 0px rgba(0, 0, 0, 0.08) inset;
+}
+
+.m-button {
+  border-radius: 24px;
+}
+
+.lightbox-yellow {
+  @apply bg-yellow-50 text-yellow-200; /* 또는 background-color: yellow-50; color: yellow-200; */
+  border-radius: 24px;
+  padding: 12px;
 }
