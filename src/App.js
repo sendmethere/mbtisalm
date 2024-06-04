@@ -33,7 +33,7 @@ function App() {
 
   
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-violet-100">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-violet-100 py-20">
       <div className='flex flex-col justify-center md:w-[768px] w-full '>
         <p className="text-2xl text-center font-extrabold text-violet-400 mb-4">{currentScene.sceneTitle}</p>
         <div className='flex w-full justify-center'>

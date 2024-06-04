@@ -46,3 +46,8 @@
   border-radius: 24px;
   padding: 12px;
 }
+.lightbox-blue {
+  @apply bg-blue-50 text-blue-200; /* 또는 background-color: yellow-50; color: yellow-200; */
+  border-radius: 24px;
+  padding: 12px;
+}
