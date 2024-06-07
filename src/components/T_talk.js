@@ -1,14 +1,76 @@
-import React from 'react';
+import React, {useState , useEffect} from 'react';
 import useStore from '../store';
 import questions from '../questions';
+import axios from 'axios';
 
 function T_talk() { 
   const { pass, setPass, scenesDone, setScenesDone, selectedQuestions } = useStore();
   
+    const [job, setJob] = useState('');
+    const [question, setQuestion] = useState('');
+    const [answer, setAnswer] = useState('');
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState('');
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        setLoading(true);
+        setError('');
+        setAnswer('');
+
+        try {
+            const response = await axios.post('https://ol27dscong7umwmv6qsdwyygee0tmrla.lambda-url.us-east-2.on.aws/', {
+                job,
+                question,
+            });
+
+            setAnswer(response.data.answer);
+        } catch (err) {
+            setError('An error occurred while fetching the answer. Please try again.');
+        } finally {
+            setLoading(false);
+        }
+    };
+
   return (
   <div>
     <div>
-      이곳에 대화창이 들어갑니다.
+      
+      <form onSubmit={handleSubmit}>
+                    <div>
+                        <label>
+                            Job:
+                            <input
+                                type="text"
+                                value={job}
+                                onChange={(e) => setJob(e.target.value)}
+                                required
+                            />
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            Question:
+                            <input
+                                type="text"
+                                value={question}
+                                onChange={(e) => setQuestion(e.target.value)}
+                                required
+                            />
+                        </label>
+                    </div>
+                    <button type="submit" disabled={loading}>
+                        {loading ? 'Asking...' : 'Ask'}
+                    </button>
+                </form>
+                {error && <p className="error">{error}</p>}
+                {answer && (
+                    <div>
+                        <h2>Answer:</h2>
+                        <p>{answer}</p>
+                    </div>
+                )}  
+
     </div>
     <p>대화를 통해 선택한 질문의 답을 찾아보세요.</p>
     <div className='w-full gap-1 grid grid-cols-3'>
