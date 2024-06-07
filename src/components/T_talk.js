@@ -17,9 +17,10 @@ function T_talk() {
         setLoading(true);
         setError('');
         setAnswer('');
+        
 
         try {
-            const response = await axios.post('https://ol27dscong7umwmv6qsdwyygee0tmrla.lambda-url.us-east-2.on.aws/', {
+            const response = await axios.post('https://w3jpmgayh4.execute-api.us-east-2.amazonaws.com/ChatSALM', {
                 job,
                 question,
             });
