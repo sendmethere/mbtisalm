@@ -2,7 +2,6 @@
   "name": "mbtisalm",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://sendmethere.github.io/mbtisalm",
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.14.5",
     "@testing-library/jest-dom": "^5.17.0",
