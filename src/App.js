@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 import React, { useEffect, useState } from 'react';
 import left_arrow from './images/left_arrow.png';
 import right_arrow from './images/right_arrow.png';
@@ -19,7 +17,7 @@ function App() {
 
   useEffect(() => {
     currentScene.passable ? setPass(true) : setPass(false);
-  }, [currentScene]);
+  }, [currentScene, setPass]);
 
   const handleNext = () => {
     if (currentScene.nextScene !== null) {
