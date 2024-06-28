@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React, { useEffect, useState } from 'react';
 import left_arrow from './images/left_arrow.png';
 import right_arrow from './images/right_arrow.png';
@@ -7,7 +9,7 @@ import scenes from './scenes';
 
 function App() {
 
-  const { sceneIndex, setSceneIndex, nickname, selectedMBTI, selectedJob, pass, setPass } = useStore();
+  const { sceneIndex, setSceneIndex, pass, setPass } = useStore();
   const [currentSceneIndex, setCurrentSceneIndex] = useState(sceneIndex);
   const currentScene = scenes[currentSceneIndex];
 

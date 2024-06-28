@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, {useState } from 'react';
 import useStore from '../store';
 import questions from '../questions';

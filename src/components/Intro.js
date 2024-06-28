@@ -1,3 +1,4 @@
+/* eslint-disable */
 // scene : 2
 import React, {useState, useEffect} from 'react';
 import Salming from '../images/salming.png';

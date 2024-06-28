@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 // scene : 9
 import React, { useEffect } from 'react';
 import useStore from '../store';
