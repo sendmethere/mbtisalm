@@ -4,7 +4,7 @@ import questions from '../questions';
 
 
 function T_question() { 
-  const { pass, setPass, scenesDone, setScenesDone, selectedQuestions, setSelectedQuestions } = useStore();
+  const { selectedQuestions, setSelectedQuestions } = useStore();
   const handleSelectQuestion = (event) => {
     const num = parseInt(event.target.getAttribute('num'));
     setSelectedQuestions(num, !selectedQuestions[num] );

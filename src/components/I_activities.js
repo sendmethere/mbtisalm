@@ -4,7 +4,7 @@ import useStore from '../store';
 import salming_back from '../images/salming_back.png';
 
 function I_activities() {
-  const { pass, setPass, sceneIndex, setSceneIndex, activityCompleted, setActivityCompleted, scenesDone, setScenesDone } = useStore();
+  const { setPass, setSceneIndex, activityCompleted, setActivityCompleted, scenesDone, setScenesDone } = useStore();
 
   const handleJoinActivity = (event) => {
     const target = event.currentTarget;

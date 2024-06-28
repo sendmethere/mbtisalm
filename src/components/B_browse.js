@@ -1,9 +1,13 @@
 import React from 'react';
 
-const B_browse = () => (
-  <div>
-    <p>Other Scene</p>
-  </div>
-);
+function B_Browse() {
+  
 
-export default B_browse;
+  return (
+    <div className="App">
+      
+    </div>
+  );
+}
+
+export default B_Browse;

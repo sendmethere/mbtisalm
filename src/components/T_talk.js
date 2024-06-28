@@ -1,36 +1,56 @@
-import React, {useState , useEffect} from 'react';
+import React, {useState } from 'react';
 import useStore from '../store';
 import questions from '../questions';
-import axios from 'axios';
 
 function T_talk() { 
-  const { pass, setPass, scenesDone, setScenesDone, selectedQuestions } = useStore();
+  const { selectedQuestions } = useStore();
   
     const [job, setJob] = useState('');
     const [question, setQuestion] = useState('');
-    const [answer, setAnswer] = useState('');
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
+    const [response, setResponse] = useState('');
 
-    const handleSubmit = async (event) => {
-        event.preventDefault();
-        setLoading(true);
-        setError('');
-        setAnswer('');
-        
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+  
+      const API_KEY = process.env.REACT_APP_OPENAI_KEY;
+      const MODEL_ID = process.env.REACT_APP_MODEL_ID;
 
-        try {
-            const response = await axios.post('https://w3jpmgayh4.execute-api.us-east-2.amazonaws.com/ChatSALM', {
-                job,
-                question,
-            });
 
-            setAnswer(response.data.answer);
-        } catch (err) {
-            setError('An error occurred while fetching the answer. Please try again.');
-        } finally {
-            setLoading(false);
-        }
+      if (!API_KEY) {
+        console.error('OpenAI API Key is missing');
+        return;
+      }
+  
+      if (!MODEL_ID) {
+        console.error('model ID is missing');
+        return;
+      }
+  
+      try {
+        const res = await fetch('https://api.openai.com/v1/completions', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${API_KEY}`
+          },
+          body: JSON.stringify({
+            model: MODEL_ID,
+            prompt: `You are a professional who handles the given question related to the specified job.
+                    Your job is ${job}. Answer the given single question at the level of a 4th-grade student, in one or two sentences. Answer in Korean.\n\n
+                    ${question}`,
+            temperature: 0.5,
+            frequency_penalty: 0,
+            presence_penalty: 0
+          })
+        });
+  
+        const data = await res.json();
+        setResponse(data.choices[0]['text']);
+      } catch (error) {
+        console.error('Error:', error);
+      }
     };
 
   return (
@@ -65,10 +85,10 @@ function T_talk() {
                     </button>
                 </form>
                 {error && <p className="error">{error}</p>}
-                {answer && (
+                {response && (
                     <div>
                         <h2>Answer:</h2>
-                        <p>{answer}</p>
+                        <p>{response}</p>
                     </div>
                 )}  
 

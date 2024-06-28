@@ -6,7 +6,7 @@ import useStore from '../store';
 
 
 function Intro() {
-  const { pass, setPass, scenesDone, setScenesDone } = useStore();
+  const { setPass, scenesDone, setScenesDone } = useStore();
   const [currentSentence, setCurrentSentence] = useState(0);
 
   useEffect(() => {

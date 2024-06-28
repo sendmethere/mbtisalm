@@ -4,7 +4,7 @@ import useStore from '../store';
 import salming_outro from '../images/salming_outro.png';
 
 function Outro() { 
-  const { sceneIndex, setSceneIndex, pass, setPass, scenesDone, setScenesDone, nickname } = useStore();
+  const { setSceneIndex, nickname } = useStore();
 
   return (
   <div>
