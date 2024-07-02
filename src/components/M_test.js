@@ -78,7 +78,7 @@ const MBTITest = () => {
     if (scenesDone[9] === true) {
       setPass(true);
     }
-  }, []);
+  }, [scenesDone, setPass]);
 
   const currentQuestion = questions[currentQuestionIndex];
 
