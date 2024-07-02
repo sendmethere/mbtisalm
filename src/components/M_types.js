@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import MBTI_INFO from '../mbit_info';
-
+import MBTI_INFO from '../mbti_info';
+import profile from '../images/profile.png';
 
 function M_types() { 
   const [isOpen, setIsOpen] = useState(false);
@@ -26,6 +26,14 @@ function M_types() {
 
   return (
     <div>
+      <div className='flex gap-4 mb-6'>
+      <div>
+        <img src={profile} alt="profile" className='w-24'></img>
+      </div>
+      <div className='p-4 w-full bg-yellow-50 rounded-2xl text-yellow-700'>
+        <p>16가지 성격 유형을 알아볼까요?</p>
+      </div>
+    </div>
       <div className='flex flex-wrap grid grid-cols-4'>
         {MBTI_TYPES.map((type, index) => (
           <div key={index} className='grow bg-blue-50 text-blue-200 hover-zoom hover-light px-4 py-8 rounded-2xl m-1 text-center'

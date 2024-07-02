@@ -1,11 +1,19 @@
 import React from 'react';
 
+import profile from '../images/profile.png';
+
 const M_info = () => (
   <div>
-    
-    <p>성격유형검사는 네 가지 다른 기준을 사용해서 사람들의 성격을 나눠요. 각 기준마다 두 가지 선택지가 있어요.</p>
-    <p>그래서 네 가지 기준을 조합하면 총 16가지 성격 유형이 나오게 됩니다. 이제 그 네 가지 기준이 무엇인지 알아볼까요?</p>
-    
+    <div className='flex gap-4'>
+      <div>
+        <img src={profile} alt="profile" className='w-24'></img>
+      </div>
+      <div className='p-4 w-full bg-yellow-50 rounded-2xl text-yellow-700'>
+        <p>성격유형검사는 네 가지 다른 기준을 사용해서 사람들의 성격을 나눠요. 각 기준마다 두 가지 선택지가 있어요.</p>
+        <p>그래서 네 가지 기준을 조합하면 총 16가지 성격 유형이 나오게 됩니다. 이제 그 네 가지 기준이 무엇인지 알아볼까요?</p>
+      </div>
+    </div>
+    <hr className='my-4'/>
     <p className='text-xl font-black mt-4 text-center'>외향(E) vs. 내향(I):</p>
     <div className='flex mb-4'>
       <div className='w-1/2 bg-orange-50 hover-zoom rounded-2xl p-2 m-2'>

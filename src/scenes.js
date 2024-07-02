@@ -17,11 +17,11 @@ const scenes = [
     no: 1,
     sceneName: 'Home',
     sceneTitle: 'M-B-T-I로 가꾸는 나의 삶',
-    sceneGuideTitle: '가이드',
-    sceneGuideContent: '',
+    sceneGuideTitle: '살밍이와 함께 떠나는 진로탐험!',
+    sceneGuideContent: '설정을 눌러 여러분의 정보를 입력하세요!',
     sceneComponent: Home,
     passable: true,
-    nextScene: 2,
+    nextScene: null,
     prevScene: null,
   },
   {
@@ -29,7 +29,11 @@ const scenes = [
     sceneName: 'Intro',
     sceneTitle: '삶을 가꾸는 여정을 떠나볼까요?',
     sceneGuideTitle: '삶(SALM)이란?',
-    sceneGuideContent: '',
+    sceneGuideContent: <>
+    <p>AI를 활용하여 자신의 꿈과 가치를 파악하고, <br/>자기주도적으로 자신의 진로를 계획/실행하여 보다 더 의미있는 삶을 만들어나가는 생애관리 프로젝트.</p>
+    <p className='text-lg mt-2 font-bold'>살밍이란?</p>
+      <p>이러한 삶 프로젝트를 현재진행형(~ing)으로 함께 도와줘 나가는 셀파.</p>
+    </>,
     sceneComponent: Intro,
     passable: false,
     nextScene: 3,
@@ -64,7 +68,7 @@ const scenes = [
     sceneGuideTitle: '',
     sceneGuideContent: '',
     sceneComponent: M_test,
-    passable: true,
+    passable: false,
     nextScene: 6,
     prevScene: 4,
   },

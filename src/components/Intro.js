@@ -5,9 +5,8 @@ import Salming from '../images/salming.png';
 
 import useStore from '../store';
 
-
 function Intro() {
-  const { setPass, scenesDone, setScenesDone } = useStore();
+  const { setPass, scenesDone, setScenesDone, nickname } = useStore();
   const [currentSentence, setCurrentSentence] = useState(0);
 
   useEffect(() => {
@@ -30,9 +29,10 @@ function Intro() {
   }
 
   const sentences = [
-    "삶을 가꾸는 여정을 떠나볼까요? 진행하려면 다음 버튼을 누르세요",
-    "메시지2",
-    "메시지3",
+    `${ nickname !== "" ? `${nickname}님 안녕하세요!`: ""} 우리 함께 삶을 가꾸는 여정을 떠나볼까요?`,
+    "저는 살밍이라고 해요! 여러분과 함께 꿈을 찾는 여정을 떠날 셀파(sherpa)입니다!",
+    "아래 가이드에서 SALM의 의미를 확인하세요. 확인했다면 다음 버튼을 누르세요.",
+    "자 그럼 이제 출발해볼까요?!",
   ]
   
 return (
