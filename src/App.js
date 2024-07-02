@@ -37,7 +37,7 @@ function App() {
       <div className='flex flex-col justify-center md:w-[768px] w-full '>
         <p className="text-2xl text-center font-extrabold text-violet-400 mb-4">{currentScene.sceneTitle}</p>
         <div className='flex w-full justify-center'>
-          <div className='md:flex hidden items-center'>
+          <div className='md:flex hidden w-10 h-10 mt-[100px]'>
           {currentScene.prevScene !== null ? (
             <img
               className="hover-zoom hover-light"
@@ -67,7 +67,7 @@ function App() {
             )}
 
           </div>
-          <div className='md:flex hidden items-center'>
+          <div className='md:flex hidden w-10 h-10 mt-[100px]'>
             {currentScene.nextScene !== null ? (
               <img
                 className="hover-zoom hover-light"
