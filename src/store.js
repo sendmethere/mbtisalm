@@ -39,6 +39,19 @@ const useStore = create((set) => ({
     // 일기
     diary: '',
     setDiary: (diary) => set({ diary: diary }),
+
+    // 계단
+    steps: ['', '', '', ''],
+    setSteps: (index, step) => set((state) => {
+        const newSteps = [...state.steps];
+        newSteps[index] = step;
+        return { steps: newSteps };
+    }),
+    stepFilled: () => {
+        const state = useStore.getState();
+        const firstEmptyIndex = state.steps.findIndex(step => step === '');
+        return firstEmptyIndex === -1 ? state.steps.length : firstEmptyIndex;
+    }
 }));
 
 export default useStore;
