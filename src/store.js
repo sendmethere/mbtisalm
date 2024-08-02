@@ -35,6 +35,10 @@ const useStore = create((set) => ({
         newSelectedQuestions[index] = bool;
         return { selectedQuestions: newSelectedQuestions };
     }),
+
+    // 일기
+    diary: '',
+    setDiary: (diary) => set({ diary: diary }),
 }));
 
 export default useStore;
