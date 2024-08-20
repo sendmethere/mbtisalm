@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import title from '../images/title.png';
 
 import button_1 from '../images/button_1.png';
-import button_2 from '../images/button_2.png';
 import button_3 from '../images/button_3.png';
 
 import useStore from '../store';
