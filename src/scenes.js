@@ -18,7 +18,7 @@ const scenes = [
     sceneName: 'Home',
     sceneTitle: 'M-B-T-I로 가꾸는 나의 삶',
     sceneGuideTitle: '살밍이와 함께 떠나는 진로탐험!',
-    sceneGuideContent: '설정을 눌러 여러분의 정보를 입력하세요!',
+    sceneGuideContent: '[4-6학년]창체, 도덕, 실과 - 진로 탐색 프로그램',
     sceneComponent: Home,
     passable: true,
     nextScene: null,

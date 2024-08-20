@@ -5,8 +5,6 @@ import right_arrow from './images/right_arrow.png';
 import useStore from './store';
 import scenes from './scenes';
 
-import Navi from './components/Navi';
-
 function App() {
 
   const { sceneIndex, setSceneIndex, pass, setPass } = useStore();
@@ -55,7 +53,6 @@ function App() {
           <div className='w-full'>
             <div className='m-box m-4 p-4'>
             <currentScene.sceneComponent />
-            <Navi />
             </div>
             
             {currentScene.sceneGuideTitle !== '' && (

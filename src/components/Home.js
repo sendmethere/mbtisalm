@@ -35,10 +35,10 @@ const Home = () => {
     <p className='text-primary py-4 text-center'>
       {nickname !== "" ? `환영합니다, ${nickname}님!` : '환영합니다!'}
     </p>
-    <div className='flex justify-center gap-4 w-full p-4'>
-      <img src={button_1} alt="button_1" className='flex-grow w-1/3 hover:scale-105 hover-light' onClick={()=>{setSceneIndex(1)}}></img>
-      <img src={button_2} alt="button_2" className='flex-grow w-1/3 hover:scale-105 hover-light'></img>
-      <img src={button_3} alt="button_3" className='flex-grow w-1/3 hover:scale-105 hover-light' onClick={openModal}></img>
+    <div className='flex justify-center gap-4 w-1/2 p-4 m-auto'>
+      <img src={button_1} alt="button_1" className='flex-grow w-1/4 hover:scale-105 hover-light' onClick={()=>{setSceneIndex(1)}}></img>
+      
+      <img src={button_3} alt="button_3" className='flex-grow w-1/4 hover:scale-105 hover-light' onClick={openModal}></img>
     </div>
     {isModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center z-50">
