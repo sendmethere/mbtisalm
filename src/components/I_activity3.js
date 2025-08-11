@@ -81,6 +81,7 @@ const I_activity3 = () => {
       </div>
       {cameraOn && (<>
       <hr/>
+      <p className='text-center text-sm text-gray-500 p-2'>카메라 접근 권한을 허용합니다</p>
     <div className='flex justify-center items-center py-4'>
       <Webcam
         audio={false}
